@@ -16,7 +16,7 @@ const FloatingButton: React.FC = () => {
             onPress={handlePress}
         >
             <Image
-                source={{ uri: 'https://cdn.builder.io/api/v1/image/assets/TEMP/4123971d0aa8bc920f0e4f0e680364325c3cdbef20bc5da2702fc6bbe92a2bb6?placeholderIfAbsent=true&apiKey=ca70c08a96064cac986bb26766db07c0' }}
+                source={{ uri: 'https://img.icons8.com/?size=100&id=98&format=png&color=FFFFFF' }}
                 style={styles.image}
                 resizeMode="contain"
             />
@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 90,
         right: 20,
-        height: 75,
-        width: 75,
+        height: 65,
+        width: 65,
         backgroundColor: 'green',
         borderRadius: 75 / 2,
         justifyContent: 'center',
@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
         zIndex: 1,
     },
     image: {
-        height: 50,
-        width: 50,
+        height: 30,
+        width: 30,
     },
 });
 

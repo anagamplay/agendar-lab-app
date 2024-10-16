@@ -4,10 +4,9 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 interface LabCardProps {
     name: string;
     type: string;
-    iconSrc: string;
 }
 
-const LabCard: React.FC<LabCardProps> = ({ name, type, iconSrc }) => {
+const LabCard: React.FC<LabCardProps> = ({ name, type }) => {
     return (
         <View style={styles.container}>
             <View style={styles.card}>
@@ -16,13 +15,11 @@ const LabCard: React.FC<LabCardProps> = ({ name, type, iconSrc }) => {
                         <Text style={styles.name}>{name}</Text>
                         <Text style={styles.type}>{type}</Text>
                     </View>
-                    {iconSrc && (
-                        <Image
-                            source={{ uri: iconSrc }}
-                            style={styles.icon}
-                            resizeMode="contain"
-                        />
-                    )}
+                    <Image
+                        source={{ uri: 'https://img.icons8.com/?size=100&id=85102&format=png&color=000000' }}
+                        style={styles.icon}
+                        resizeMode="contain"
+                    />
                 </View>
             </View>
         </View>
@@ -32,9 +29,8 @@ const LabCard: React.FC<LabCardProps> = ({ name, type, iconSrc }) => {
 const styles = StyleSheet.create({
     container: {
         zIndex: 0,
-        height: 87,
-        minWidth: 240,
-        width: 394,
+        height: 75,
+        width: '95%',
     },
     card: {
         backgroundColor: '#E4E4E7',
@@ -55,7 +51,6 @@ const styles = StyleSheet.create({
         fontWeight: '500',
     },
     type: {
-        marginTop: 6,
         fontSize: 12,
     },
     icon: {
