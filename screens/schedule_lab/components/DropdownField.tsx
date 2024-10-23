@@ -3,12 +3,11 @@ import { View, Image, Text, StyleSheet, TouchableOpacity, FlatList } from 'react
 
 interface DropdownFieldProps {
   label: string;
-  iconUri: string;
   options: string[];
   onSelect: (option: string) => void;
 }
 
-const DropdownField: React.FC<DropdownFieldProps> = ({ label, iconUri, options, onSelect }) => {
+const DropdownField: React.FC<DropdownFieldProps> = ({ label, options, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
@@ -22,12 +21,12 @@ const DropdownField: React.FC<DropdownFieldProps> = ({ label, iconUri, options, 
     <View style={styles.container}>
       <TouchableOpacity style={styles.inputContainer} onPress={() => setIsOpen(!isOpen)}>
         <View style={styles.labelContainer}>
-          <Text>{label}</Text>
+          {!selectedOption &&<Text>{label}</Text>}
           {selectedOption && <Text style={styles.selectedText}>{selectedOption}</Text>}
         </View>
         <Image
           accessibilityLabel={`${label} icon`}
-          source={{ uri: iconUri }}
+          source={{ uri: 'https://img.icons8.com/?size=100&id=37319&format=png&color=6C6C6C' }}
           style={styles.icon}
         />
       </TouchableOpacity>
@@ -52,7 +51,6 @@ const DropdownField: React.FC<DropdownFieldProps> = ({ label, iconUri, options, 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    paddingHorizontal: 24,
     width: '100%',
     marginBottom: 10,
     position: 'relative',
@@ -80,8 +78,8 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   icon: {
-    width: 24,
-    height: 24,
+    width: 15,
+    height: 15,
   },
   optionsContainer: {
     position: 'absolute',
